@@ -1,8 +1,9 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: 'Roboto'; //I think?
   }
 
   body {
@@ -11,9 +12,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const Title = styled.h1`
+  font-size: 50px;
+  color: ${({ theme }) => theme.colors.primary};
+  text-align: center;
+`
+
 const theme = {
   colors: {
-    primary: '#0070f3',
+    primary: '#000',
+    grayBorder: '#d9d9d9',
   },
 }
 
@@ -22,6 +30,8 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Title>PUNK API</Title>
+        <hr />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
