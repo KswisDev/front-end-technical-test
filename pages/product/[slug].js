@@ -6,13 +6,6 @@ import ProductDetail from '../components/product-detail';
 
 export default function Product(props) {
     const router = useRouter()
-    const { slug } = router.query
-
-    console.log(props)
-
-    useEffect(() => {
-       
-      });
 
   return ( 
     <ProductDetail {...props.productData}></ProductDetail>
